@@ -24,7 +24,7 @@ export default function Form (props) {
         <form onSubmit={handleSubmit}>
           <h2 className="label-wrapper">
             <label htmlFor="new-todo-input" className="label__lg">
-              What needs to be done?
+                Cosa vuoi fare?
             </label>
           </h2>
           <input
@@ -37,7 +37,7 @@ export default function Form (props) {
             onChange={handleChange}
           />
           <button type="submit" className="btn btn__primary btn__lg">
-            Add
+            Aggiungi
           </button>
         </form>
     );

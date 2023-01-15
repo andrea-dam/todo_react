@@ -1,4 +1,4 @@
-// import './App.css';
+import './App.css';
 import Todo from "./components/Todo";
 import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
@@ -15,9 +15,9 @@ function usePrevious(value) {
   
 
 const FILTER_MAP = {
-    All: () => true,
-    Active: (task) => !task.completed,
-    Completed: (task) => task.completed
+    Tutte: () => true,
+    Attive: (task) => !task.completed,
+    Completate: (task) => task.completed
 };
 
 const FILTER_NAMES = Object.keys(FILTER_MAP);
@@ -25,7 +25,7 @@ const FILTER_NAMES = Object.keys(FILTER_MAP);
 export default function App (props) {
 
     const [tasks, setTasks] = useState(props.tasks);
-    const [filter, setFilter] = useState("All");
+    const [filter, setFilter] = useState("Tutte");
     
     function toggleTaskCompleted (id) {
         const updatedTasks = tasks.map((task) => {
@@ -81,8 +81,8 @@ export default function App (props) {
         setTasks([...tasks, newTask]);
     }
 
-    const numeroTasks = taskList.length !== 1 ? "tasks" : "task";
-    const headingText = `${taskList.length} ${numeroTasks} remaining`;
+    const rimanente = taskList.length !== 1 ? "rimanenti" : "rimanente";
+    const headingText = `${taskList.length} Attività ${rimanente}`;
 
     const listHeadingRef = useRef(null);
 
